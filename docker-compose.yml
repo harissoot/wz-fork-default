@@ -26,11 +26,12 @@ services:
     #  - "80:80"
     #  - "8080:8080"
     #restart: on-failure
-  app:
+  wzml:
     build: .
     #network_mode: "service:gluetun" #If using VPN, Remove the Hash from first and fill up Above Details.
     command: bash start.sh
+    container_name: wzml
     restart: on-failure
-    ports:
-      - "80:80"
-      - "8080:8080"
+    expose:
+      - "83"
+      - "8000"
